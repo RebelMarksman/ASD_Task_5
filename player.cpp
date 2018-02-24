@@ -39,11 +39,22 @@ void shuffleList(List &L) {
     * PR : mengacak isi (elemen) dari list L
     * FS : isi (elemen) dari list teracak
     */
-    //-------------your code here-------------
 
+
+    address Q=NULL;
++        int x=0;
++        for(int i=1; i<=10; i++){
++            x=randomInt(5);
++            Q=first(L);
++            for(int j=1; i<=x; i++){
++                Q=next(Q);
++            }
++            deleteAfter(L,Q,P);
++            insertFirst(L,P);
++        }
         cout<<"UNDER MAIN TENIS"<<endl;
 
-    //----------------------------------------
+
 }
 
 void sortListByID(List &L) {
@@ -64,11 +75,19 @@ void playRepeat(List &L, int n) {
     * PR : memainkan seluruh lagu di dalam list
     *      dari lagu pertama hingga terakhir sebanyak n kali
     */
-    //-------------your code here-------------
+     int cnt=0;
++        address P=first(L);
++        while(cnt<=n){
++            while(next(P)!=first(L)){
++                playMusic(P);
++                P=next(P);
++            }
++            cnt++;
++        }
 
         cout<<"UNDER MAIN TENIS"<<endl;
 
-    //----------------------------------------
+
 }
 
 void deleteMusicByID(List &L, infotype x) {
@@ -78,7 +97,21 @@ void deleteMusicByID(List &L, infotype x) {
     *      jika ID lagu ditemukan, hapus (deallocate) lagu dari list
     * FS : elemen dengan ID yang dicari dideallocate
     */
-    //-------------your code here-------------
+    address Q=first(L);
++        address R=NULL;
++        while(next(Q)!=first(L)){
++            if(info(Q).ID==x.ID){
++                R=Q;
++            }
++            Q=next(Q);
++        }
++        if(R!=NULL){
++            Q=first(L);
++            while(Q!=R){
++                Q=next(Q);
++            }
++            deleteAfter(L,Q,R);
++        }
 
         cout<<"UNDER MAIN TENIS"<<endl;
 

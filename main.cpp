@@ -113,10 +113,11 @@ void runMenu(int menu) {
         break;
     case 2:
         // insert last music
-        //-------------your code here-------------
+        P=inputMusic();
+        insertLast(L,P);
         cout<<"UNDER MAIN TENIS"<<endl;
 
-        //----------------------------------------
+
         cout<<"press enter";getche();
         break;
     case 3:
@@ -131,14 +132,15 @@ void runMenu(int menu) {
         break;
     case 5:
         // play last music
-        //-------------your code here-------------
+         P = last(L);
+         playMusic(P);
         cout<<"UNDER MAIN TENIS"<<endl;
 
         //----------------------------------------
         break;
     case 6:
         // search music by name
-        //-------------your code here-------------
+
         cout<<"input music filename (.wav) : ";
         cin>>x.name;
         P = findElmByName(L, x);
@@ -150,10 +152,11 @@ void runMenu(int menu) {
         break;
     case 7:
         // search music by ID
-        //-------------your code here-------------
+
         cout<<"UNDER MAIN TENIS"<<endl;
 
-        //----------------------------------------
+        cout<<"Input ID : "<< endl;
+        cin>>x.ID;
         cout<<"press enter";getche();
         break;
     case 8:
